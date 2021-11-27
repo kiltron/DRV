@@ -104,7 +104,7 @@
         android:layout_marginRight="15dp"
         android:background="@drawable/buttons"
         android:padding="15dp"
-        android:text="Войти"
+        android:text="Войт"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
         android:textSize="18sp" />
