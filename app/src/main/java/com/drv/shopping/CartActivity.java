@@ -65,7 +65,6 @@ public class CartActivity extends AppCompatActivity{
         pay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Uri uri = Uri.parse("+79245664531");
                 Intent intent = getPackageManager().getLaunchIntentForPackage("ru.sberbankmobile");
                 if (intent != null) {
                     startActivity(intent);

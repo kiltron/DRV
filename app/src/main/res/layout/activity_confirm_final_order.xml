@@ -15,7 +15,7 @@
         android:layout_marginTop="25dp"
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="25dp"
-        android:text="Пожалуйста, напишите свои данные для доставки"
+        android:text="Пожалуйста, напишите свои данные для заявки"
 
         android:textAlignment="center"
         android:textColor="#000000"

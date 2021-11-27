@@ -22,8 +22,8 @@ import java.util.Calendar;
 import java.util.HashMap;
 
 public class RiderForm extends AppCompatActivity {
-    private EditText nameEditText,phoneEditText,addressEditText,cityEditText;
-    private Button confirmOrderBtn;
+    private EditText nameEditText,ipEditText,expEditText,carEditText,numEditText,termEditText;
+    private Button confirmRiderBtn;
     private String totalAmount = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,12 +32,14 @@ public class RiderForm extends AppCompatActivity {
 
         totalAmount = getIntent().getStringExtra("Total Price");
         Toast.makeText(this, "Общая стоимость = Рб. "+totalAmount,Toast.LENGTH_SHORT).show();
-        confirmOrderBtn = (Button) findViewById(R.id.confirm_final_order_btn);
-        nameEditText =(EditText) findViewById(R.id.shippment_name);
-        phoneEditText =(EditText) findViewById(R.id.shippment_phone_number);
-        addressEditText =(EditText) findViewById(R.id.shippment_address);
-        cityEditText =(EditText) findViewById(R.id.shippment_city);
-        confirmOrderBtn.setOnClickListener(new View.OnClickListener() {
+        confirmRiderBtn = (Button) findViewById(R.id.confirm_rider);
+        nameEditText =(EditText) findViewById(R.id.rider_name);
+        ipEditText =(EditText) findViewById(R.id.rider_ip);
+        expEditText =(EditText) findViewById(R.id.rider_exp);
+        numEditText =(EditText) findViewById(R.id.rider_number_osago);
+        carEditText = (EditText)findViewById(R.id.rider_car);
+        termEditText = (EditText)findViewById(R.id.ride_term);
+        confirmRiderBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Check();
@@ -49,13 +51,19 @@ public class RiderForm extends AppCompatActivity {
         if(TextUtils.isEmpty(nameEditText.getText().toString())){
             Toast.makeText(this,"Пожалуйста напишите своё ФИО",Toast.LENGTH_SHORT).show();
         }
-        else if(TextUtils.isEmpty(phoneEditText.getText().toString())){
+        else if(TextUtils.isEmpty(ipEditText.getText().toString())){
             Toast.makeText(this,"Пожалуйста напишите свой номер телефона",Toast.LENGTH_SHORT).show();
         }
-        else if(TextUtils.isEmpty(addressEditText.getText().toString())){
+        else if(TextUtils.isEmpty(expEditText.getText().toString())){
             Toast.makeText(this,"Пожалуйста напишите правильный адрес",Toast.LENGTH_SHORT).show();
         }
-        else if(TextUtils.isEmpty(cityEditText.getText().toString())){
+        else if(TextUtils.isEmpty(numEditText.getText().toString())){
+            Toast.makeText(this,"Пожалуйста напишите вашего города",Toast.LENGTH_SHORT).show();
+        }
+        else if(TextUtils.isEmpty(carEditText.getText().toString())){
+            Toast.makeText(this,"Пожалуйста напишите вашего города",Toast.LENGTH_SHORT).show();
+        }
+        else if(TextUtils.isEmpty(termEditText.getText().toString())){
             Toast.makeText(this,"Пожалуйста напишите вашего города",Toast.LENGTH_SHORT).show();
         }
         else {
@@ -72,14 +80,16 @@ public class RiderForm extends AppCompatActivity {
         SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss a");
         saveCurrentTime = currentDate.format(calForDate.getTime());
         final DatabaseReference ordersRef= FirebaseDatabase.getInstance().getReference()
-                .child("Orders")
+                .child("RiderCheck")
                 .child(Prevalent.currentOnlineUser.getPhone());
         HashMap<String, Object> ordersMap = new HashMap<>();
         ordersMap.put("totalAmount",totalAmount);
         ordersMap.put("name",nameEditText.getText().toString());
-        ordersMap.put("phone",phoneEditText.getText().toString());
-        ordersMap.put("address",addressEditText.getText().toString());
-        ordersMap.put("city",cityEditText.getText().toString());
+        ordersMap.put("ip",ipEditText.getText().toString());
+        ordersMap.put("exp",expEditText.getText().toString());
+        ordersMap.put("car",carEditText.getText().toString());
+        ordersMap.put("term",termEditText.getText().toString());
+        ordersMap.put("num",numEditText.getText().toString());
         ordersMap.put("date",saveCurrentDate);
         ordersMap.put("time",saveCurrentTime);
         ordersMap.put("state", "Not Shipped");
