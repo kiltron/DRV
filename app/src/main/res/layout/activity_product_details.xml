@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F0F1"
+    tools:context=".ProductDetailsActivity">
+
+    <ImageView
+        android:id="@+id/product_image_details"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/product_name_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/product_image_details"
+        android:layout_marginTop="85dp"
+        android:gravity="center|left"
+        android:text="ФИО"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/productDepartament_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/product_image_details"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="Отправление"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/productComing_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/product_image_details"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="0dp"
+        android:gravity="center"
+        android:text="Прибытие"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/product_description_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/number_btn"
+        android:layout_marginBottom="89dp"
+        android:gravity="center|left"
+        android:text="Описание"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/product_price_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/product_name_details"
+        android:layout_marginBottom="-86dp"
+        android:gravity="center|right"
+        android:text="Стоимость"
+        android:textColor="#0075FF"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+        android:id="@+id/number_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/pd_add_to_cart_button"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="108dp"
+        android:layout_marginBottom="13dp"
+        android:elevation="60dp"
+        app:finalNumber="10"
+        app:initialNumber="1"
+        app:textSize="16dp">
+
+    </com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
+
+    <Button
+        android:id="@+id/pd_add_to_cart_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/buttons"
+        android:text="В корзину"
+        android:textColor="@android:color/white"
+        android:textSize="18dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="168dp"
+        android:layout_height="155dp"
+        android:layout_below="@+id/product_image_details"
+        android:layout_marginStart="-7dp"
+        android:layout_marginTop="-36dp"
+        android:layout_marginEnd="26dp"
+        android:layout_toStartOf="@+id/productComing_details"
+        android:layout_toEndOf="@+id/productDepartament_details"
+        app:srcCompat="@drawable/arrow" />
+
+</RelativeLayout>

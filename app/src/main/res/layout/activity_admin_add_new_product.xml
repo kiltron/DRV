@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F0F1"
+    tools:context=".AdminAddNewProductActivity">
+
+    <ImageView
+        android:id="@+id/select_product_image"
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:cropToPadding="false"
+        android:scaleType="centerCrop"
+        android:src="@drawable/select_product_image" />
+
+    <EditText
+        android:id="@+id/productDepartament"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/select_product_image"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="45dp"
+        android:background="@drawable/input_design"
+        android:hint="ФИО"
+        android:inputType="textMultiLine"
+        android:padding="20dp"
+        android:textColor="#000000"
+        android:textColorHint="#808080" />
+
+
+    <EditText
+        android:id="@+id/product_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/productDepartament"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="45dp"
+        android:background="@drawable/input_design"
+        android:hint="Описание"
+        android:inputType="textMultiLine"
+        android:padding="20dp"
+        android:textColorHint="#808080"
+        android:textColor="#000000"/>
+
+
+    <EditText
+        android:id="@+id/product_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/product_name"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="45dp"
+        android:background="@drawable/input_design"
+        android:hint="Стоимость"
+        android:inputType="textMultiLine"
+        android:padding="20dp"
+        android:textColorHint="#808080"
+        android:textColor="#000000"/>
+
+
+    <EditText
+        android:id="@+id/product_departament"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/product_name"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginRight="45dp"
+        android:background="@drawable/input_design"
+        android:hint="Отправление"
+        android:inputType="textMultiLine"
+        android:padding="20dp"
+        android:textColorHint="#808080"
+        android:textColor="#000000"/>
+
+    <EditText
+        android:id="@+id/product_coming"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/product_name"
+        android:layout_alignParentEnd="true"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="101dp"
+        android:layout_marginEnd="43dp"
+        android:layout_marginRight="45dp"
+        android:background="@drawable/input_design"
+        android:hint="Прибытие"
+        android:inputType="textMultiLine"
+        android:padding="20dp"
+        android:textColorHint="#808080"
+        android:textColor="#000000"/>
+
+    <Button
+        android:id="@+id/add_new_product"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/product_price"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="143dp"
+        android:layout_marginRight="45dp"
+        android:background="@drawable/buttons"
+        android:padding="17dp"
+        android:text="Добавить"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+</RelativeLayout>
